@@ -1,28 +1,26 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <myheader></myheader>
+    <mycontent></mycontent>
+    <app-footer></app-footer>
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+// this register the component locally that mean only this file can use the myhtmltag component
+import myheader from './components/header-component.vue'
+import myfooter from './components/footer-component.vue'
+import mycontent from './components/content-component.vue'
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  data(){
+  },
+  components:{
+    myheader,
+    'app-footer' : myfooter,
+    mycontent
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
