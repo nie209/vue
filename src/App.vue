@@ -1,23 +1,28 @@
 <template>
-  <div>
-    <myheader></myheader>
-    <mycontent></mycontent>
-    <app-footer></app-footer>
+  <!-- <add-blog></add-blog> -->
+  <div>    
+    <view-blogs></view-blogs>
+    <h1>This is a different page we have not learn router yet</h1>
+    <list-blogs></list-blogs>
   </div>
+
 </template>
 <script>
 // this register the component locally that mean only this file can use the myhtmltag component
-import myheader from './components/header-component.vue'
-import myfooter from './components/footer-component.vue'
-import mycontent from './components/content-component.vue'
+import addBlog from './components/add-blog.vue';
+import viewBlogs from './components/view-blogs.vue';
+import listBlogs from './components/list-blogs.vue';
 export default {
   data(){
+    return{
+
+    }
   },
   components:{
-    myheader,
-    'app-footer' : myfooter,
-    mycontent
-  }
+    "add-blog": addBlog,
+    "view-blogs": viewBlogs,
+    "list-blogs": listBlogs,
+  },
 }
 </script>
 
