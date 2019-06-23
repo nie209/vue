@@ -5,7 +5,7 @@
     <div v-for="blog in filterBlogs" id="singleBlog">
       <!-- using build in vue filter this does not change the oringal data instead -->
       <!--  it change it how it render to the browser -->
-      <h2 v-rainbow>{{blog.title | to-uppercase}}</h2>
+      <router-link :to="'/blog/'+ blog.id"><h2 v-rainbow>{{blog.title | to-uppercase}}</h2></router-link>
       <p>posted by user ID: {{blog.id}}</p>
       <p>{{blog.body | max-display-width}}</p>
     </div>
@@ -54,6 +54,9 @@ export default {
   //     });
   //   }
   // }
+  mixins: [
+    searchMixin
+  ]
 }
 </script>
 

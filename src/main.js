@@ -1,8 +1,16 @@
 import Vue from 'vue';
 import App from './App.vue';
 import VueResource from 'vue-resource';
+import VueRouter from 'vue-router';
+import route from './route'
 Vue.config.productionTip = false;
 Vue.use(VueResource);
+Vue.use(VueRouter);
+const router = new VueRouter({
+  routes: route,
+  mode: "history",
+});
+
 // custom directive
 // this directive has been register locally
 
@@ -37,4 +45,5 @@ Vue.filter('max-display-width', function(data){
 });
 new Vue({
   render: h => h(App),
+  router: router
 }).$mount('#app')
